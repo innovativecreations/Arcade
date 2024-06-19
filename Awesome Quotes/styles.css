@@ -65,44 +65,45 @@ body {
 }
 
 .loader {
-    border: 5px solid #f3f3f3; /* Light grey background on the loader parts that are not active */
-    border-top-color: #3498db; /* Primary color for the loader spinner */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 2s linear infinite;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -25px 0 0 -25px; /* Center the loader */
-    display: none; /* Initially hidden */
-    z-index: 100; /* Ensure it's on top of other content */
+    transform: translate(-50%, -50%);
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.loader:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: loader 1.2s linear infinite;
 }
 
-/* Fade in/out animations for the loader */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-/* Transparent overlay */
 #overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
     display: none;
-    z-index: 50; /* Below the loader but above other content */
+    z-index: 99; 
 }
+
+
