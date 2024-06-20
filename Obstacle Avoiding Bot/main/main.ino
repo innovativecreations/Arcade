@@ -52,12 +52,6 @@ void loop(){
 }
 
 
-
-
-
-
-
-
 void moveStop(){
   
   digitalWrite(M3, LOW);
