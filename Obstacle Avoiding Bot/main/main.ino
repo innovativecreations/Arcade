@@ -40,10 +40,89 @@ void loop(){
   int distanceLeft = 0;
   delay(50);
   if (distance <= 20){
-
+    turnRight();
+    moveStop();
+    turnLeft();
+    moveStop();
   }
   else{
-    
+    moveForward(); 
   }
 
+}
+
+
+
+
+
+
+
+
+void moveStop(){
+  
+  digitalWrite(M3, LOW);
+  digitalWrite(M1, LOW);
+  digitalWrite(M4, LOW);
+  digitalWrite(M2, LOW);
+}
+
+void moveForward(){
+
+
+    
+    digitalWrite(M1, HIGH);
+    digitalWrite(M3, HIGH);
+  
+    digitalWrite(M2, LOW);
+    digitalWrite(M4, LOW); 
+
+}
+
+void moveBackward(){
+
+
+
+  digitalWrite(M2, HIGH);
+  digitalWrite(M4, HIGH);
+  
+  digitalWrite(M1, LOW);
+  digitalWrite(M3, LOW);
+  
+}
+
+void turnRight(){
+
+  digitalWrite(M1, HIGH);
+  digitalWrite(M4, HIGH);
+  
+  digitalWrite(M2, LOW);
+  digitalWrite(M3, LOW);
+  
+  delay(500);
+  
+  digitalWrite(M1, HIGH);
+  digitalWrite(M3, HIGH);
+  
+  digitalWrite(M2, LOW);
+  digitalWrite(M4, LOW);
+ 
+  
+  
+}
+
+void turnLeft(){
+
+  digitalWrite(M2, HIGH);
+  digitalWrite(M3, HIGH);
+  
+  digitalWrite(M1, LOW);
+  digitalWrite(M4, LOW);
+
+  delay(500);
+  
+  digitalWrite(M1, HIGH);
+  digitalWrite(M3, HIGH);
+  
+  digitalWrite(M2, LOW);
+  digitalWrite(M4, LOW);
 }
