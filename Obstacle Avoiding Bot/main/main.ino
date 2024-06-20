@@ -36,22 +36,65 @@ void setup(){
   delay(100);
 }
 void loop(){
-  int distanceRight = 0
+
+  int distanceRight = 0;
   int distanceLeft = 0;
   delay(50);
+
   if (distance <= 20){
-    turnRight();
     moveStop();
-    turnLeft();
+    delay(300);
+    moveBackward();
+    delay(400);
     moveStop();
+    delay(300);
+    distanceRight = lookRight();
+    delay(300);
+    distanceLeft = lookLeft();
+    delay(300);
+
+    if (distance >= distanceLeft){
+      turnRight();
+      moveStop();
+    }
+    else{
+      turnLeft();
+      moveStop();
+    }
   }
   else{
     moveForward(); 
   }
+  distance = readPing();
 
+}
+int lookRight(){  
+  servo_motor.write(50);
+  delay(500);
+  int distance = readPing();
+  delay(100);
+  servo_motor.write(115);
+  return distance;
 }
 
 
+int lookLeft(){
+  servo_motor.write(170);
+  delay(500);
+  int distance = readPing();
+  delay(100);
+  servo_motor.write(115);
+  return distance;
+  delay(100);
+}
+int readPing(){
+  delay(70);
+  int cm = sonar.ping_cm();
+  if (cm==0){
+    cm=250;
+  }
+  return cm;
+}
 void moveStop(){
   
   digitalWrite(M3, LOW);
