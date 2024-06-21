@@ -1,7 +1,7 @@
-function getRandomCatFact() {
+async function getRandomCatFact() {
 
-    const factResponse = fetch('https://catfact.ninja/fact');
-    const factData = factResponse.json();
+    const factResponse = await fetch('https://catfact.ninja/fact');
+    const factData = await factResponse.json();
     console.log(factData);
 }
 
