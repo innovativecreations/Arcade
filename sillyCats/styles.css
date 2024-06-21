@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.container {
+    margin-top: 50px;
+    align-items: center;
+}
+
+#cat-fact {
+
+    margin-bottom: 20px;
+
+}
+.fact{
+    max-width: 25%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#cat-meme {
+    max-width: 25%;
+    height: auto;
+    margin-bottom: 20px;
+}
