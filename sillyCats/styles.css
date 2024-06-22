@@ -1,8 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text color */
+    background-color: #121212;
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
 }
@@ -10,12 +10,12 @@ body {
 .container {
     margin-top: 50px;
     padding: 20px;
-    background-color: #1e1e1e; /* Dark container background */
+    background-color: #1e1e1e;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: inline-block;
     width: 75%;
-    max-width: 800px; /* Optional: limit the max width for larger screens */
+    max-width: 800px;
     box-sizing: border-box;
 }
 
@@ -53,20 +53,24 @@ button:hover {
 }
 
 .loader {
-    border: 16px solid #f3f3f3; 
-    border-top: 16px solid #3498db; 
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none; 
+    display: none;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.loader-paw {
+    width: 50px;
+    height: 50px;
+    animation: paw-bounce 1s infinite;
+}
+
+@keyframes paw-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
