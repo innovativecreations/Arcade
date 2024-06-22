@@ -1,8 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #121212;
-    color: #e0e0e0; 
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
     margin: 0;
     padding: 0;
 }
@@ -10,12 +10,12 @@ body {
 .container {
     margin-top: 50px;
     padding: 20px;
-    background-color: #1e1e1e;
+    background-color: #1e1e1e; /* Dark container background */
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
     display: inline-block;
     width: 75%;
-    max-width: 800px; 
+    max-width: 800px; /* Optional: limit the max width for larger screens */
     box-sizing: border-box;
 }
 
@@ -50,4 +50,14 @@ button {
 
 button:hover {
     background-color: #2980b9;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+
+    display: none;
 }
