@@ -31,5 +31,6 @@ function flipCoin(movieTitle) {
     
     setTimeout(() => {
         coinText.innerText = movieTitle;
-    }, 500); /
+    }, 500);
+}
 suggestMovie();
