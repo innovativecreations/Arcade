@@ -6,9 +6,7 @@
 
 body {
     font-family: "Arial", sans-serif;
-    background: linear-gradient(135deg,
-            #f4fb8f,
-            #ff6b6b);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,12 +29,7 @@ body {
     perspective: 1000px;
 }
 
-h1 {
-    color: #1ca00a;
-    font-size: 2.5rem;
-    margin: 0 0 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
+
 
 .coin {
     width: 150px;
