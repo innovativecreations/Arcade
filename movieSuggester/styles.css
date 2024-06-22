@@ -1,3 +1,4 @@
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -5,15 +6,17 @@ body {
     color: #ffffff;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    margin-top: 50px;
     padding: 20px;
     background-color: #1e1e1e;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: inline-block;
     width: 80%;
     max-width: 600px;
     box-sizing: border-box;
@@ -69,7 +72,7 @@ button:hover {
 #coin-text {
     max-width: 80%;
     word-wrap: break-word;
-    color: black; 
+    color: black; /* Ensure text color is visible against the gold background */
 }
 
 @keyframes flip {
