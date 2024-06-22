@@ -45,19 +45,24 @@
 //     }, 1000);
 // }
 // script.js
+// script.js
+// script.js
 document.getElementById('flip-coin').addEventListener('click', flipCoin);
 
 function flipCoin() {
     const coin = document.getElementById('coin');
     const coinText = document.getElementById('coin-text');
     
+    // Clear the text on the coin
+    coinText.innerText = "";
+
     // Reset the animation
     coin.classList.remove('flip');
     void coin.offsetWidth; // Trigger reflow
     coin.classList.add('flip');
 
-    // Set the text on the coin
+    // Set the text on the coin after the flip animation
     setTimeout(() => {
-        coinText.innerText = "Heads";
+        coinText.innerText = "Mayank";
     }, 500); // Adjust the timing to match the midpoint of the animation
 }
