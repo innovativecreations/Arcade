@@ -1,9 +1,15 @@
 async function getRandomCatFact() {
+    const overlay = document.getElementById('overlay');
     const loader = document.getElementById('loader');
     const catFact = document.getElementById('cat-fact');
     const catMeme = document.getElementById('cat-meme');
 
+    overlay.style.display = 'block';
     loader.style.display = 'block';
+    setTimeout(() => {
+        overlay.style.opacity = 1;
+        loader.style.opacity = 1;
+    }, 0);
     catFact.style.opacity = 0;
     catMeme.style.opacity = 0;
 
@@ -23,9 +29,16 @@ async function getRandomCatFact() {
     const memeData = await memeResponse.json();
     catMeme.src = memeData[0].url;
 
-    loader.style.display = 'none';
-    catFact.style.opacity = 1;
-    catMeme.style.opacity = 1;
+    catMeme.onload = () => {
+        overlay.style.opacity = 0;
+        loader.style.opacity = 0;
+        setTimeout(() => {
+            overlay.style.display = 'none';
+            loader.style.display = 'none';
+        }, 500); 
+        catFact.style.opacity = 1;
+        catMeme.style.opacity = 1;
+    };
 }
 
 getRandomCatFact();
