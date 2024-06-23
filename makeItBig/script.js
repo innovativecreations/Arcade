@@ -1,19 +1,7 @@
-document.getElementById('potato').addEventListener('click', growPotato);
-
-function growPotato() {
-    const potato = document.getElementById('potato');
-    const currentWidth = potato.clientWidth;
-    const currentHeight = potato.clientHeight;
-
-
-    const newWidth = currentWidth * 1.1;
-    const newHeight = currentHeight * 1.1;
-
-    if (newHeight >= window.innerHeight) {
-        potato.style.width = '200px';
-        potato.style.height = '200px';
-    } else {
-        potato.style.width = newWidth + 'px';
-        potato.style.height = newHeight + 'px';
+document.getElementById('submit-button').addEventListener('click', function() {
+    const imageUrl = document.getElementById('image-url').value;
+    if (imageUrl) {
+        // Open new page with the image
+        window.open('resize.html?url=' + encodeURIComponent(imageUrl), '_blank');
     }
-}
+});
