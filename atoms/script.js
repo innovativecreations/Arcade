@@ -24,7 +24,6 @@ document.getElementById('atom-form').addEventListener('submit', function(event) 
         12: { name: 'Magnesium', symbol: 'Mg', atomi:, },
     };
 
-
     
     const atom = atoms[atomicNumber];
 
