@@ -32,10 +32,6 @@ document.getElementById('atom-form').addEventListener('submit', function(event) 
         20: { name: 'Calcium', symbol: 'Ca', atomicMass: 40.078, orbitals: [2, 8, 8, 2] },
     };
 
-<<<<<<< HEAD
-=======
-    
->>>>>>> 65b3f536f532f2fbdc7024983678d42cc6491a22
     const atom = atoms[atomicNumber];
 
     if (atom) {
