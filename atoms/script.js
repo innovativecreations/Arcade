@@ -93,7 +93,25 @@ document.getElementById('atom-form').addEventListener('submit', function (event)
             75: { name: 'Rhenium', symbol: 'Re', atomicMass: 186.207, state: 'Solid', electronConfig: '[Xe] 4f14 5d5 6s2', orbitals: [2, 8, 18, 32, 13, 2] },
             76: { name: 'Osmium', symbol: 'Os', atomicMass: 190.23, state: 'Solid', electronConfig: '[Xe] 4f14 5d6 6s2', orbitals: [2, 8, 18, 32, 14, 2] },
             77: { name: 'Iridium', symbol: 'Ir', atomicMass: 192.217, state: 'Solid', electronConfig: '[Xe] 4f14 5d7 6s2', orbitals: [2, 8, 18, 32, 15, 2] },
-            78: { name: 'Platinum', symbol: 'Pt', atomicMass: 195.084, state: 'Solid', electronConfig: '[Xe] 4f14 5d9 6s1', orbitals: [2, 8, 18,]}
+            78: { name: 'Platinum', symbol: 'Pt', atomicMass: 195.084, state: 'Solid', electronConfig: '[Xe] 4f14 5d9 6s1', orbitals: [2, 8, 18, 32, 17, 1] },
+            79: { name: 'Gold', symbol: 'Au', atomicMass: 196.966569, state: 'Solid', electronConfig: '[Xe] 4f14 5d10 6s1', orbitals: [2, 8, 18, 32, 18, 1] },
+            80: { name: 'Mercury', symbol: 'Hg', atomicMass: 200.592, state: 'Liquid', electronConfig: '[Xe] 4f14 5d10 6s2', orbitals: [2, 8, 18, 32, 18, 2] },
+            81: { name: 'Thallium', symbol: 'Tl', atomicMass: 204.38, state: 'Solid', electronConfig: '[Xe] 4f14 5d10 6s2 6p1', orbitals: [2, 8, 18, 32, 18, 3] },
+            82: { name: 'Lead', symbol: 'Pb', atomicMass: 207.2, state: 'Solid', electronConfig: '[Xe] 4f14 5d10 6s2 6p2', orbitals: [2, 8, 18, 32, 18, 4] },
+            83: { name: 'Bismuth', symbol: 'Bi', atomicMass: 208.98040, state: 'Solid', electronConfig: '[Xe] 4f14 5d10 6s2 6p3', orbitals: [2, 8, 18, 32, 18, 5] },
+            84: { name: 'Polonium', symbol: 'Po', atomicMass: [209], state: 'Solid', electronConfig: '[Xe] 4f14 5d10 6s2 6p4', orbitals: [2, 8, 18, 32, 18, 6] },
+            85: { name: 'Astatine', symbol: 'At', atomicMass: [210], state: 'Solid', electronConfig: '[Xe] 4f14 5d10 6s2 6p5', orbitals: [2, 8, 18, 32, 18, 7] },
+            86: { name: 'Radon', symbol: 'Rn', atomicMass: [222], state: 'Gas', electronConfig: '[Xe] 4f14 5d10 6s2 6p6', orbitals: [2, 8, 18, 32, 18, 8] },
+            87: { name: 'Francium', symbol: 'Fr', atomicMass: [223], state: 'Solid', electronConfig: '[Rn] 7s1', orbitals: [2, 8, 18, 32, 18, 8, 1] },
+            88: { name: 'Radium', symbol: 'Ra', atomicMass: [226], state: 'Solid', electronConfig: '[Rn] 7s2', orbitals: [2, 8, 18, 32, 18, 8, 2] },
+            89: { name: 'Actinium', symbol: 'Ac', atomicMass: [227], state: 'Solid', electronConfig: '[Rn] 6d1 7s2', orbitals: [2, 8, 18, 32, 18, 9, 2] },
+            90: { name: 'Thorium', symbol: 'Th', atomicMass: 232.0377, state: 'Solid', electronConfig: '[Rn] 6d2 7s2', orbitals: [2, 8, 18, 32, 18, 10, 2] },
+            91: { name: 'Protactinium', symbol: 'Pa', atomicMass: 231.03588, state: 'Solid', electronConfig: '[Rn] 5f2 6d1 7s2', orbitals: [2, 8, 18, 32, 20, 9, 2] },
+            92: { name: 'Uranium', symbol: 'U', atomicMass: 238.02891, state: 'Solid', electronConfig: '[Rn] 5f3 6d1 7s2', orbitals: [2, 8, 18, 32, 21, 9, 2] },
+            93: { name: 'Neptunium', symbol: 'Np', atomicMass: [237], state: 'Solid', electronConfig: '[Rn] 5f4 6d1 7s2', orbitals: [2, 8, 18, 32, 22, 9, 2] },
+            94: { name: 'Plutonium', symbol: 'Pu', atomicMass: [244], state: 'Solid', electronConfig: '[Rn] 5f6 7s2', orbitals: [2, 8, 18, 32, 24, 8, 2] },
+            95: { name: 'Americium', symbol: 'Am', atomicMass: [243], state: 'Solid', electronConfig: '[Rn] 5f7 7s2', orbitals: [2, 8, 18, 32, 25, 8, 2] },
+        
         };
 
         const atom = atoms[atomicNumber];
