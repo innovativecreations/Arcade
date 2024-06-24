@@ -1,4 +1,4 @@
-document.getElementById('atom-form').addEventListener('submit', function(event) {
+document.getElementById('atom-form').addEventListener('submit', function (event) {
     event.preventDefault();
     const atomicNumber = document.getElementById('atomic-number').value;
 
@@ -36,6 +36,9 @@ document.getElementById('atom-form').addEventListener('submit', function(event) 
             18: { name: 'Argon', symbol: 'Ar', atomicMass: 39.948, state: 'Gas', electronConfig: '[Ne] 3s2 3p6', orbitals: [2, 8, 8] },
             19: { name: 'Potassium', symbol: 'K', atomicMass: 39.098, state: 'Solid', electronConfig: '[Ar] 4s1', orbitals: [2, 8, 8, 1] },
             20: { name: 'Calcium', symbol: 'Ca', atomicMass: 40.078, state: 'Solid', electronConfig: '[Ar] 4s2', orbitals: [2, 8, 8, 2] },
+            21: { name: 'Scandium', symbol: 'Sc', atomicMass: 44.955908, state: 'Solid', electronConfig: '[Ar] 3d1 4s2', orbitals: [2, 8, 9, 2] },
+            22: { name: 'Titanium', symbol: 'Ti', atomicMass: 47.867, state: 'Solid', electronConfig: '[Ar] 3d2 4s2', orbitals: [2, 8, 10, 2] },
+            23: { name: 'Vanadium', symbol: 'V', atomicMass: 50.9415, state: 'Sol' }
         };
 
         const atom = atoms[atomicNumber];
