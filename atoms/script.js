@@ -111,13 +111,20 @@ document.getElementById('atom-form').addEventListener('submit', function (event)
             93: { name: 'Neptunium', symbol: 'Np', atomicMass: [237], state: 'Solid', electronConfig: '[Rn] 5f4 6d1 7s2', orbitals: [2, 8, 18, 32, 22, 9, 2] },
             94: { name: 'Plutonium', symbol: 'Pu', atomicMass: [244], state: 'Solid', electronConfig: '[Rn] 5f6 7s2', orbitals: [2, 8, 18, 32, 24, 8, 2] },
             95: { name: 'Americium', symbol: 'Am', atomicMass: [243], state: 'Solid', electronConfig: '[Rn] 5f7 7s2', orbitals: [2, 8, 18, 32, 25, 8, 2] },
-        
+
         };
 
         const atom = atoms[atomicNumber];
 
         if (atom) {
-            document.getElementById('atom-info').innerHTML = `
+            if (atomicNumber > 36) {
+                document.getElementById('atom-info').innerHTML = `
+                <p>Working on it, please try a atomic no. between 1-36.</p>
+            `;
+                document.getElementById('orbital-svg').innerHTML = '';
+            }
+            else {
+                document.getElementById('atom-info').innerHTML = `
                 <h2>${atom.name} (${atom.symbol})</h2>
                 <p>Atomic Number: ${atomicNumber}</p>
                 <p>Atomic Mass: ${atom.atomicMass}</p>
@@ -125,7 +132,9 @@ document.getElementById('atom-form').addEventListener('submit', function (event)
                 <p>Electron Configuration: ${atom.electronConfig}</p>
             `;
 
-            visualizeOrbitals(atom.symbol, atom.orbitals);
+                visualizeOrbitals(atom.symbol, atom.orbitals);
+            }
+
         } else {
             document.getElementById('atom-info').innerHTML = `
                 <p>No information available for atomic number ${atomicNumber}.</p>
