@@ -83,30 +83,19 @@ function visualizeOrbitals(orbitals) {
             const electronX = centerX + radius * Math.cos(angle);
             const electronY = centerY + radius * Math.sin(angle);
 
+            const electronGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            electronGroup.setAttribute('class', 'electron-group');
+            electronGroup.setAttribute('transform-origin', `${centerX}px ${centerY}px`);
+            electronGroup.style.animation = `rotate ${5 + orbitalIndex}s linear infinite`;
+
             const electron = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             electron.setAttribute('cx', electronX);
             electron.setAttribute('cy', electronY);
             electron.setAttribute('r', 5);
             electron.setAttribute('fill', 'yellow');
 
-            electron.addEventListener('mouseover', () => {
-                const tooltip = document.createElement('div');
-                tooltip.innerText = `Electron in orbital ${orbitalIndex + 1}`;
-                tooltip.style.position = 'absolute';
-                tooltip.style.left = `${electronX + 10}px`;
-                tooltip.style.top = `${electronY - 10}px`;
-                tooltip.style.backgroundColor = 'black';
-                tooltip.style.color = 'white';
-                tooltip.style.padding = '5px';
-                tooltip.style.borderRadius = '5px';
-                document.body.appendChild(tooltip);
-
-                electron.addEventListener('mouseout', () => {
-                    document.body.removeChild(tooltip);
-                });
-            });
-
-            svg.appendChild(electron);
+            electronGroup.appendChild(electron);
+            svg.appendChild(electronGroup);
         }
     });
 }
