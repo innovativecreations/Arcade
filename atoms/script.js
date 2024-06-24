@@ -48,10 +48,10 @@ document.getElementById('atom-form').addEventListener('submit', function(event) 
                 <p>Electron Configuration: ${atom.electronConfig}</p>
             `;
 
-            visualizeOrbitals(atom.orbitals);
+            visualizeOrbitals(atom.symbol, atom.orbitals);
         } else {
             document.getElementById('atom-info').innerHTML = `
-                <p>No information available for atomic number ${atomicNumber}.</p>
+                <p>Try between 1-20 ${atomicNumber}.</p>
             `;
             document.getElementById('orbital-svg').innerHTML = '';
         }
@@ -60,12 +60,29 @@ document.getElementById('atom-form').addEventListener('submit', function(event) 
     }, 1000);
 });
 
-function visualizeOrbitals(orbitals) {
+function visualizeOrbitals(symbol, orbitals) {
     const svg = document.getElementById('orbital-svg');
     svg.innerHTML = '';
 
     const centerX = svg.clientWidth / 2;
     const centerY = svg.clientHeight / 2;
+
+    const nucleus = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    nucleus.setAttribute('cx', centerX);
+    nucleus.setAttribute('cy', centerY);
+    nucleus.setAttribute('r', 20);
+    nucleus.setAttribute('fill', 'red');
+    svg.appendChild(nucleus);
+
+    const symbolText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    symbolText.setAttribute('x', centerX);
+    symbolText.setAttribute('y', centerY + 5);
+    symbolText.setAttribute('text-anchor', 'middle');
+    symbolText.setAttribute('fill', 'white');
+    symbolText.setAttribute('font-size', '16');
+    symbolText.setAttribute('font-family', 'Arial');
+    symbolText.textContent = symbol;
+    svg.appendChild(symbolText);
 
     orbitals.forEach((electronCount, orbitalIndex) => {
         const radius = (orbitalIndex + 1) * 40;
