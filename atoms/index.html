@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="loader" class="loading-spinner" style="display: none;"></div>
     <div id="app">
         <h1>Atom Visualizer</h1>
         <form id="atom-form">
@@ -14,7 +15,6 @@
             <input type="number" id="atomic-number" name="atomic-number" placeholder="e.g., 1 for Hydrogen" required>
             <button type="submit">Submit</button>
         </form>
-        <div id="loading" class="loading-spinner" style="display: none;"></div>
         <div id="atom-info"></div>
         <div id="atom-visualization">
             <h2>Electron Orbitals</h2>

@@ -9,7 +9,8 @@ document.getElementById('atom-form').addEventListener('submit', function(event) 
 
     console.log('Atomic Number:', atomicNumber);
 
-    document.getElementById('loading').style.display = 'block';
+    document.getElementById('loader').style.display = 'block';
+    document.getElementById('app').classList.add('blurred');
     document.getElementById('atom-info').innerHTML = '';
     document.getElementById('orbital-svg').innerHTML = '';
 
@@ -51,12 +52,13 @@ document.getElementById('atom-form').addEventListener('submit', function(event) 
             visualizeOrbitals(atom.symbol, atom.orbitals);
         } else {
             document.getElementById('atom-info').innerHTML = `
-                <p>Try between 1-20 ${atomicNumber}.</p>
+                <p>No information available for atomic number ${atomicNumber}.</p>
             `;
             document.getElementById('orbital-svg').innerHTML = '';
         }
 
-        document.getElementById('loading').style.display = 'none';
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('app').classList.remove('blurred');
     }, 1000);
 });
 

@@ -15,6 +15,11 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: filter 0.3s;
+}
+
+.blurred {
+    filter: blur(5px);
 }
 
 form {
@@ -55,9 +60,14 @@ button:hover {
 }
 
 .loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: inline-block;
     width: 80px;
     height: 80px;
+    z-index: 1000;
 }
 
 .loading-spinner:after {
@@ -67,8 +77,8 @@ button:hover {
     height: 64px;
     margin: 8px;
     border-radius: 50%;
-    border: 6px solid #007BFF;
-    border-color: #007BFF transparent #007BFF transparent;
+    border: 6px solid #cecece;
+    border-color: #aaaaaa transparent #b6b6b6 transparent;
     animation: loading-spinner 1.2s linear infinite;
 }
 
