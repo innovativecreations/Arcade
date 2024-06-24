@@ -21,10 +21,21 @@ document.getElementById('atom-form').addEventListener('submit', function(event) 
         9: { name: 'Fluorine', symbol: 'F', atomicMass: 18.998, orbitals: [2, 7] },
         10: { name: 'Neon', symbol: 'Ne', atomicMass: 20.180, orbitals: [2, 8] },
         11: { name: 'Sodium', symbol: 'Na', atomicMass: 22.990, orbitals: [2, 8, 1] },
-        12: { name: 'Magnesium', symbol: 'Mg', atomi:, },
+        12: { name: 'Magnesium', symbol: 'Mg', atomicMass: 24.305, orbitals: [2, 8, 2] },
+        13: { name: 'Aluminum', symbol: 'Al', atomicMass: 26.982, orbitals: [2, 8, 3] },
+        14: { name: 'Silicon', symbol: 'Si', atomicMass: 28.085, orbitals: [2, 8, 4] },
+        15: { name: 'Phosphorus', symbol: 'P', atomicMass: 30.974, orbitals: [2, 8, 5] },
+        16: { name: 'Sulfur', symbol: 'S', atomicMass: 32.06, orbitals: [2, 8, 6] },
+        17: { name: 'Chlorine', symbol: 'Cl', atomicMass: 35.45, orbitals: [2, 8, 7] },
+        18: { name: 'Argon', symbol: 'Ar', atomicMass: 39.948, orbitals: [2, 8, 8] },
+        19: { name: 'Potassium', symbol: 'K', atomicMass: 39.098, orbitals: [2, 8, 8, 1] },
+        20: { name: 'Calcium', symbol: 'Ca', atomicMass: 40.078, orbitals: [2, 8, 8, 2] },
     };
 
+<<<<<<< HEAD
+=======
     
+>>>>>>> 65b3f536f532f2fbdc7024983678d42cc6491a22
     const atom = atoms[atomicNumber];
 
     if (atom) {
@@ -45,7 +56,8 @@ document.getElementById('atom-form').addEventListener('submit', function(event) 
 
 function visualizeOrbitals(orbitals) {
     const svg = document.getElementById('orbital-svg');
-    svg.innerHTML = ''; 
+    svg.innerHTML = '';
+
     const centerX = svg.clientWidth / 2;
     const centerY = svg.clientHeight / 2;
 
@@ -53,9 +65,44 @@ function visualizeOrbitals(orbitals) {
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
         circle.setAttribute('cx', centerX);
         circle.setAttribute('cy', centerY);
-        circle.setAttribute('r', radius * 40); 
+        circle.setAttribute('r', radius * 40);
         circle.setAttribute('stroke', 'white');
         circle.setAttribute('fill', 'none');
         svg.appendChild(circle);
+    });
+
+    orbitals.forEach((electronCount, orbitalIndex) => {
+        const radius = (orbitalIndex + 1) * 40;
+
+        for (let i = 0; i < electronCount; i++) {
+            const angle = (i / electronCount) * 2 * Math.PI;
+            const electronX = centerX + radius * Math.cos(angle);
+            const electronY = centerY + radius * Math.sin(angle);
+
+            const electron = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            electron.setAttribute('cx', electronX);
+            electron.setAttribute('cy', electronY);
+            electron.setAttribute('r', 5);
+            electron.setAttribute('fill', 'yellow');
+
+            electron.addEventListener('mouseover', () => {
+                const tooltip = document.createElement('div');
+                tooltip.innerText = `Electron in orbital ${orbitalIndex + 1}`;
+                tooltip.style.position = 'absolute';
+                tooltip.style.left = `${electronX + 10}px`;
+                tooltip.style.top = `${electronY - 10}px`;
+                tooltip.style.backgroundColor = 'black';
+                tooltip.style.color = 'white';
+                tooltip.style.padding = '5px';
+                tooltip.style.borderRadius = '5px';
+                document.body.appendChild(tooltip);
+
+                electron.addEventListener('mouseout', () => {
+                    document.body.removeChild(tooltip);
+                });
+            });
+
+            svg.appendChild(electron);
+        }
     });
 }

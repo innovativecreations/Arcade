@@ -49,3 +49,13 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+#orbital-svg {
+    margin-top: 20px;
+}
+
+#loading {
+    font-size: 1.2em;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
