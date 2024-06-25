@@ -25,7 +25,14 @@ while not_game_over:
         kachua = sara_kachua[i]
         distance = random.randint(0, 10)
         kachua.forward(distance)
+        if kachua.xcor() > 200:
 
+            if kachua.pencolor() == prediction:
+                print(f"Party doh, Aap jit chuke hai")
+            else:
+                print("Maaf karia aap har gae hai")
+            print(f"Jitne wala kachua {kachua.pencolor()} hai")
+            not_game_over = False
 
 
 screen.exitonclick()
