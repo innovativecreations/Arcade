@@ -1,8 +1,49 @@
 from tkinter import *
 from tkinter import messagebox
 from random import randint, choice, shuffle
+import pyperclip
 import json
 
+# ---------------------------- search data ------------------------------- #
+
+def search():
+    website = website_entry.get()
+    try:
+        with open("Secret data.json", mode="r") as data_f:
+            data = json.load(data_f)
+        searched_d = data[website]
+    except FileNotFoundError:
+        messagebox.showinfo(title="Error", message="There is no registered data")
+    except KeyError:
+        messagebox.showinfo(title="Error", message="Sorry please enter right website name")
+    else:
+        messagebox.showinfo(title=website, message=f"Email/ Username: {searched_d['Email/ Username']}\nPassword: {searched_d['Password']}")
+
+# ---------------------------- PASSWORD GENERATOR ------------------------------- #
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+           'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+           'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+
+def gen_pass():
+
+    char_list = [choice(letters) for char in range(randint(8, 10))]
+    symbols_list = [choice(symbols) for char in range(randint(2, 4))]
+    no_list = [choice(numbers) for char in range(randint(2, 4))]
+
+    password_list = char_list + symbols_list + no_list
+
+    shuffle(password_list)
+
+    password = "".join(password_list)
+
+    pass_entry.delete(0, END)
+    pass_entry.insert(END, password)
+    pyperclip.copy(password)
+
+# print(f"Your password is: {password}")
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 def save_all():
@@ -67,10 +108,10 @@ contact_entry.insert(END, "innovativecreations195@gmail.com")
 pass_entry = Entry(width=21)
 pass_entry.grid(column=1, row=3, sticky="EW")
 
-search_b = Button(text="Search",)
+search_b = Button(text="Search", command= search)
 search_b.grid(column=2, row=1, sticky="EW")
 
-generate_b = Button(text="Generate Password",)
+generate_b = Button(text="Generate Password", command=gen_pass)
 generate_b.grid(column=2, row=3)
 
 add_b = Button(text="Add", width=36, command=save_all)
