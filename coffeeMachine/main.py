@@ -71,10 +71,13 @@ while True:
         print(f"Milk = {resources['milk']}g")
         print(f"Coffee = {resources['water']}100g")
 
+    elif select_coffee == "cancel":
+        break
 
     else:
         coffee = MENU[select_coffee]
         material_available = check_materials(coffee["ingredients"])
-
+        if material_available == True:
+            askForMoney(coffee["cost"], coffee)
 
 print("Shutting Down, Have a awesome day")
