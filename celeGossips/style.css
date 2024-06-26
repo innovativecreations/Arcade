@@ -51,6 +51,7 @@ button:hover {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
 #num-headlines {
@@ -94,6 +95,14 @@ button:hover {
     margin: 0;
 }
 
+#gossip-history li {
+    background: #fff3e0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
 
 footer {
     text-align: center;
