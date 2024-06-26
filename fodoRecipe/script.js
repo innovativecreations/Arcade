@@ -43,12 +43,17 @@ document.getElementById('save-button').addEventListener('click', function() {
     const a = document.createElement('a');
     a.href = url;
     a.download = 'recipe.txt';
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 });
 
-document.getElementById('share-link').addEventListener('click', function() {
+document.getElementById('share-link').addEventListener('click', function(event) {
     const recipe = document.getElementById('recipe-display').innerText;
     const url = new URL(window.location.href);
     url.searchParams.set('recipe', encodeURIComponent(recipe));
     document.getElementById('share-link').href = url.toString();
+    event.preventDefault();
+    alert(`Share this link: ${url.toString()}`);
 });
