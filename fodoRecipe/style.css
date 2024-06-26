@@ -53,13 +53,45 @@ button:hover {
     transition: background 0.3s, box-shadow 0.3s;
 }
 
-@media (max-width: 600px) {
-    button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
+#num-ingredients {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
 
-    #recipe-display {
-        font-size: 18px;
-    }
+#save-button,
+#share-link {
+    margin-top: 10px;
+    display: block;
+    font-size: 16px;
+    color: #4e342e;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #ffd54f;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#save-button:hover,
+#share-link:hover {
+    background-color: #ffb74d;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#recipe-history {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#recipe-history li {
+    background: #fff3e0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: background 0.3s, box-shadow 0.3s;
 }

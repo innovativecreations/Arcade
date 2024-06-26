@@ -10,14 +10,17 @@
     <div id="app">
         <h1>Random Bizarre Food Generator</h1>
         <label for="num-ingredients">Number of Ingredients:</label>
-        <input type="number" id="num-ingredients" value="3" min="1" max="10">
-        <button id="generate-button">Generate Recipe</button>
-        <div id="recipe-display"></div>
-        <button id="save-button" style="display:none;">Save Recipe</button>
-        <a id="share-link" href="#" style="display:none;">Share Recipe</a>
+        <input type="number" id="num-ingredients" value="3" min="1" max="10" aria-label="Number of Ingredients">
+        <button id="generate-button" aria-label="Generate Recipe">Generate Recipe</button>
+        <div id="recipe-display" role="alert" aria-live="assertive"></div>
+        <button id="save-button" style="display:none;" aria-label="Save Recipe">Save Recipe</button>
+        <a id="share-link" href="#" style="display:none;" aria-label="Share Recipe">Share Recipe</a>
         <h2>Recipe History</h2>
-        <ul id="recipe-history"></ul>
+        <ul id="recipe-history" aria-label="Recipe History"></ul>
     </div>
+    <footer>
+        <p>Disclaimer ⚡ - Make anything on your own, not responsible for the food poisoning😎</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
