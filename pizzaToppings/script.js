@@ -20,6 +20,12 @@ document.getElementById('generate-button').addEventListener('click', function() 
         "Apple Slices and Meatballs",
         "Pineapple and Cottage Cheese",
         "Eggplant and Jelly Beans",
+        "Broccoli and Raw Chicken",
+        "Egg and Melted Ice Cream",
+        "Cheese and Bubblegum",
+        "Sweet Potato and Anchovies",
+        "Onion and Raw Steak",
+
     ];
 
     const randomTopping = toppings[Math.floor(Math.random() * toppings.length)];
