@@ -8,21 +8,29 @@
 </head>
 <body>
     <div id="app">
-        <h1>Random Fake Celebrity Gossip Generator</h1>
-        <label for="num-headlines">Number of Headlines:</label>
-        <input type="number" id="num-headlines" value="1" min="1" max="10">
-        <button id="generate-button">Generate Gossip</button>
-        <div id="gossip-display"></div>
-        <button id="save-button" style="display:none;">Save Headlines</button>
-        <a id="share-link" href="#" style="display:none;">Share Headlines</a>
-        <h2>Gossip History</h2>
-        <div id="history-container">
-            <ul id="gossip-history"></ul>
-        </div>
+        <header>
+            <h1>Random Fake Celebrity Gossip Generator</h1>
+        </header>
+        <main>
+            <div class="controls">
+                <label for="num-headlines">Number of Headlines:</label>
+                <input type="number" id="num-headlines" value="1" min="1" max="10">
+                <button id="generate-button">Generate Gossip</button>
+            </div>
+            <div id="gossip-display" class="display"></div>
+            <div class="actions">
+                <button id="save-button" style="display:none;">Save Headlines</button>
+                <a id="share-link" href="#" style="display:none;">Share Headlines</a>
+            </div>
+            <h2>Gossip History</h2>
+            <div id="history-container" class="scrollable">
+                <ul id="gossip-history"></ul>
+            </div>
+        </main>
+        <footer>
+            <p>Disclaimer ⚡ - These are not the actual stuff which has been happened. 😎</p>
+        </footer>
     </div>
-    <footer>
-        <p>Disclaimer ⚡ - These are not the actually stuff which has been happened.😎</p>
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>

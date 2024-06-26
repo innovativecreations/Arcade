@@ -1,112 +1,27 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #fff9c4;
-    background: linear-gradient(to right, #fff9c4, #ffe082);
+    color: #333;
 }
 
 #app {
-    text-align: center;
-    background: #fff176;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    max-width: 400px;
-    transition: transform 0.3s;
-}
-
-#app:hover {
-    transform: scale(1.05);
-}
-
-button {
-    padding: 12px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 25px;
-    background-color: #ffd54f;
-    color: #4e342e;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-button:hover {
-    background-color: #ffb74d;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-#gossip-display {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #4e342e;
-    background: #fff3e0;
-    padding: 15px;
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, box-shadow 0.3s;
+    overflow: hidden;
 }
 
-#num-headlines {
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-}
-
-#save-button,
-#share-link {
-    margin-top: 10px;
-    display: block;
-    font-size: 16px;
-    color: #4e342e;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 25px;
-    background-color: #ffd54f;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-#save-button:hover,
-#share-link:hover {
-    background-color: #ffb74d;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-#history-container {
-    max-height: 150px;
-    overflow-y: auto;
-    margin-top: 20px;
-    padding-right: 10px;
-}
-
-#gossip-history {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-#gossip-history li {
-    background: #fff3e0;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-    transition: background 0.3s, box-shadow 0.3s;
-}
-
-footer {
+header {
+    background: #6200ea;
+    color: #fff;
     text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #4e342e;
+    padding: 20px;
 }
+
