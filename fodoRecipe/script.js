@@ -12,8 +12,9 @@ document.getElementById('generate-button').addEventListener('click', function() 
         "Jelly Beans"
     ];
 
+    const numIngredients = parseInt(document.getElementById('num-ingredients').value);
     const randomIngredients = [];
-    while (randomIngredients.length < 3) {
+    while (randomIngredients.length < numIngredients) {
         const randomIngredient = ingredients[Math.floor(Math.random() * ingredients.length)];
         if (!randomIngredients.includes(randomIngredient)) {
             randomIngredients.push(randomIngredient);
@@ -22,4 +23,20 @@ document.getElementById('generate-button').addEventListener('click', function() 
 
     const recipe = `Try this bizarre combination: ${randomIngredients.join(', ')}!`;
     document.getElementById('recipe-display').innerText = recipe;
+    document.getElementById('save-button').style.display = 'inline-block';
+    document.getElementById('share-link').style.display = 'inline-block';
+});
+
+document.getElementById('save-button').addEventListener('click', function() {
+    const recipe = document.getElementById('recipe-display').innerText;
+    const blob = new Blob([recipe], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'recipe.txt';
+    a.click();
+});
+
+document.getElementById('share-link').addEventListener('click', function() {
+
 });
