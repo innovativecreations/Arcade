@@ -33,7 +33,16 @@ document.getElementById('generate-button').addEventListener('click', function() 
     document.getElementById('gossip-display').innerHTML = headlines;
     document.getElementById('save-button').style.display = 'inline-block';
     document.getElementById('share-link').style.display = 'inline-block';
+
+    addGossipToHistory(headlines);
 });
+
+function addGossipToHistory(gossip) {
+    const gossipHistory = document.getElementById('gossip-history');
+    const li = document.createElement('li');
+    li.innerHTML = gossip;
+    gossipHistory.appendChild(li);
+}
 
 document.getElementById('save-button').addEventListener('click', function() {
     const headlines = document.getElementById('gossip-display').innerText;
