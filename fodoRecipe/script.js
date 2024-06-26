@@ -25,7 +25,16 @@ document.getElementById('generate-button').addEventListener('click', function() 
     document.getElementById('recipe-display').innerText = recipe;
     document.getElementById('save-button').style.display = 'inline-block';
     document.getElementById('share-link').style.display = 'inline-block';
+
+    addRecipeToHistory(recipe);
 });
+
+function addRecipeToHistory(recipe) {
+    const recipeHistory = document.getElementById('recipe-history');
+    const li = document.createElement('li');
+    li.innerText = recipe;
+    recipeHistory.appendChild(li);
+}
 
 document.getElementById('save-button').addEventListener('click', function() {
     const recipe = document.getElementById('recipe-display').innerText;
@@ -38,5 +47,8 @@ document.getElementById('save-button').addEventListener('click', function() {
 });
 
 document.getElementById('share-link').addEventListener('click', function() {
-
+    const recipe = document.getElementById('recipe-display').innerText;
+    const url = new URL(window.location.href);
+    url.searchParams.set('recipe', encodeURIComponent(recipe));
+    document.getElementById('share-link').href = url.toString();
 });
