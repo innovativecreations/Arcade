@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Fake Celebrity Gossip Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <h1>Random Fake Celebrity Gossip Generator</h1>
+        <label for="num-headlines">Number of Headlines:</label>
+        <input type="number" id="num-headlines" value="1" min="1" max="10">
         <button id="generate-button">Generate Gossip</button>
         <div id="gossip-display"></div>
+        <button id="save-button" style="display:none;">Save Headlines</button>
+        <a id="share-link" href="#" style="display:none;">Share Headlines</a>
     </div>
     <script src="script.js"></script>
 </body>

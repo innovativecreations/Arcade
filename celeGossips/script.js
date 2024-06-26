@@ -18,10 +18,41 @@ document.getElementById('generate-button').addEventListener('click', function() 
         "joining a new movie franchise", "getting back with their ex"
     ];
 
-    const randomCelebrity = celebrities[Math.floor(Math.random() * celebrities.length)];
-    const randomAction = actions[Math.floor(Math.random() * actions.length)];
-    const randomSituation = situations[Math.floor(Math.random() * situations.length)];
+    const numHeadlines = parseInt(document.getElementById('num-headlines').value);
+    let headlines = "";
 
-    const gossip = `${randomCelebrity} ${randomAction} ${randomSituation}!`;
-    document.getElementById('gossip-display').innerText = gossip;
+    for (let i = 0; i < numHeadlines; i++) {
+        const randomCelebrity = celebrities[Math.floor(Math.random() * celebrities.length)];
+        const randomAction = actions[Math.floor(Math.random() * actions.length)];
+        const randomSituation = situations[Math.floor(Math.random() * situations.length)];
+
+        const gossip = `${randomCelebrity} ${randomAction} ${randomSituation}!`;
+        headlines += `<p>${gossip}</p>`;
+    }
+
+    document.getElementById('gossip-display').innerHTML = headlines;
+    document.getElementById('save-button').style.display = 'inline-block';
+    document.getElementById('share-link').style.display = 'inline-block';
+});
+
+document.getElementById('save-button').addEventListener('click', function() {
+    const headlines = document.getElementById('gossip-display').innerText;
+    const blob = new Blob([headlines], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'headlines.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+});
+
+document.getElementById('share-link').addEventListener('click', function(event) {
+    const headlines = document.getElementById('gossip-display').innerText;
+    const url = new URL(window.location.href);
+    url.searchParams.set('headlines', encodeURIComponent(headlines));
+    document.getElementById('share-link').href = url.toString();
+    event.preventDefault();
+    alert(`Share this link: ${url.toString()}`);
 });
