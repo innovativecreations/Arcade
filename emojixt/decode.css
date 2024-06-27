@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('bg.jpg');
+    background-image: url('bg11.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -12,10 +12,10 @@ body {
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(221, 221, 221, 0.8);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     text-align: center;
 }
 
@@ -48,6 +48,5 @@ button:hover {
     font-size: 24px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
 }
