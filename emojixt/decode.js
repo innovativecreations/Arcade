@@ -29,15 +29,13 @@ const emojiDict = {
 };
 
 function decryptText() {
-    const emojiText = document.getElementById('inputText').value;
-    const decryptedOutputDiv = document.getElementById('output');
-    decryptedOutputDiv.innerHTML = '';
+    const emojiText = document.getElementById('emojiText').value;
+    let decryptedText = '';
 
     for (let char of emojiText) {
-        const letter = emojiDict[char] || char;
-        console.log(emojiDict[char] || char);
-        const span = document.createElement('span');
-        span.textContent = letter;
-        decryptedOutputDiv.appendChild(span);
+        decryptedText += emojiDict[char] !== undefined ? emojiDict[char] : char;
     }
+
+    const decryptedOutputDiv = document.getElementById('output');
+    decryptedOutputDiv.textContent = decryptedText;
 }
