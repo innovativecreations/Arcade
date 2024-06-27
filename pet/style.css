@@ -1,0 +1,50 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+#app {
+    width: 90%;
+    max-width: 400px;
+    background: #ffebcd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background: #8a2be2;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+main {
+    padding: 20px;
+}
+
+#rock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+#pet-rock {
+    width: 100px;
+    height: 100px;
+    background: gray;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
