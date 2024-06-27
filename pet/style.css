@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    background: #e2462b;
+    background: #8a2be2;
     color: #fff;
     padding: 20px;
     border-radius: 10px 10px 0 0;
@@ -42,7 +42,8 @@ main {
 #pet-rock {
     width: 100px;
     height: 100px;
-    background: gray;
+    background: url('dino.png') no-repeat center center;
+    background-size: cover;
     border-radius: 50%;
     position: relative;
     transition: transform 0.5s ease;
@@ -53,12 +54,12 @@ button {
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background: #e2462b;
+    background: #8a2be2;
     color: #fff;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 button:hover {
-    background: #f0664d;
+    background: #5d3fd3;
 }
