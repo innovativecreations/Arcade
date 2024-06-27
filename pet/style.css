@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    background: #8a2be2;
+    background: #e2462b;
     color: #fff;
     padding: 20px;
     border-radius: 10px 10px 0 0;
@@ -48,3 +48,17 @@ main {
     transition: transform 0.5s ease;
 }
 
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background: #e2462b;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #f0664d;
+}
