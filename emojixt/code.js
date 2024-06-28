@@ -32,11 +32,16 @@ function translateText() {
     const inputText = document.getElementById('inputText').value.toLowerCase();
     const outputDiv = document.getElementById('output');
     outputDiv.innerHTML = '';
-
+    var coded = ""
     for (let char of inputText) {
         const emoji = emojiDict[char] || char; 
-        const span = document.createElement('span');
-        span.textContent = emoji;
-        outputDiv.appendChild(span);
+        // const span = document.createElement('span');
+        // span.textContent = emoji;
+        // outputDiv.appendChild(span);
+        coded += emoji;
+
     }
+    const span = document.createElement('span');
+    span.textContent = coded;
+    outputDiv.appendChild(span);
 }
