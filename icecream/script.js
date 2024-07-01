@@ -1,6 +1,8 @@
-document.getElementById('generate-btn').addEventListener('click', generateTopping);
+document.getElementById('generate-btn').addEventListener('click', () => {
+    document.getElementById('background-music').play();
+    generateTopping();
+});
 document.getElementById('save-btn').addEventListener('click', saveFavorite);
-document.getElementById('background-music').play();
 
 const toppings = [
     { name: 'Sprinkles', image: 'images/sprinkles.png' },
@@ -46,3 +48,40 @@ function saveFavorite() {
         favoritesList.appendChild(listItem);
     }
 }
+
+function displayWeather(weather) {
+    if (weather && weather.main && weather.weather) {
+        const weatherDisplay = document.getElementById('weather-display');
+        weatherDisplay.innerText = `Current weather: ${weather.main.temp}°C, ${weather.weather[0].description}`;
+    } else {
+        console.error('Invalid weather data:', weather);
+    }
+}
+
+function getWeather(latitude, longitude) {
+    const apiKey = '6ccd2f99eff4683534864afc9b83e822'; 
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => displayWeather(data))
+        .catch(error => console.error('Error fetching weather data:', error));
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            const { latitude, longitude } = position.coords;
+            getWeather(latitude, longitude);
+        });
+    } else {
+        console.error('Geolocation is not supported by this browser.');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', getLocation);
